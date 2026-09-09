@@ -8,6 +8,27 @@
 
     <h1>Welcome to PendaDating</h1>
     <p>This is your dashboard.</p>
+    <input id="username" type="text" placeholder="Enter your name">
 
+    <button id="welcomeBtn">Welcome Me</button>
+
+    <p id="message"></p>
 </body>
+<script>
+    const welcomeBtn=document.querySelector("#welcomeBtn");
+    const name=document.querySelector("#username");
+    const message=document.querySelector("#message");
+    
+    function welcomeUser() {
+        if(name.value!==""&&name.value.length>3){
+
+            message.textContent="name accepted";
+        }
+        else{
+            message.textContent="please enter a name longer than 3 characters";
+        }
+
+    }
+    welcomeBtn.addEventListener('click',welcomeUser);
+</script>
 </html>
