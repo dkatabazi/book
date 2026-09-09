@@ -39,7 +39,7 @@
         <div class="pendaform">
             <h1>PendaDating</h1>
             <label>name</label>
-            <input type="text" name="name" placeholder="enter your name">
+            <input type="text" id ="username" placeholder="enter your name">
             <br>
             <label>email</label>
             <input type="email" name="email" placeholder="enter your email">
@@ -47,13 +47,19 @@
             <label>password</label>
             <input type="password" name="password" placeholder="enter your password">
             <br>
-            <button id="submitbtn" button type="submit">Submit</button>
+            <button id="submitbtn" type="submit">Submit</button>
         </div>
         <script>
              const submitbutton = document.getElementById("submitbtn");
+             const name = document.getElementById("username");
              submitbutton.addEventListener('click', () => {
-                alert('Thank you for submitting your information!');
+                alert(`welcoame ${name.value}!`);
+                submitbutton.textContent = "submitted";
+                submitbutton.style.backgroundColor = "green";
              });
+        </script>
+    </body>
+</html>
         </script>
     </body>
 </html>

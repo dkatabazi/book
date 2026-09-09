@@ -41,18 +41,23 @@
     </head>
     <body>
         <div class="toyota">
-            <h1>Toyota</h1>
+            <h1 id="heading">toyota</h1>
             <img src="toyota.png" alt="toyota">
             <b>welcome to toyata get your dream car</b>
             <br>
-            <button type="click">Toyota</button>
+            <button id="mybutton">Toyota</button>
 
         </div>
         <script>
-            const button = document.querySelector('button');
+            const button = document.getElementById("mybutton");
             button.addEventListener('click', () => {
                 alert('Welcome to Toyota! Get your dream car today!');
+            document.getElementById("heading").textContent="classiccars"
             });
+            const car ="toyota";
+            const price=200000;
+            const available=true;
+            console.log(`Car: ${car}, Price: ${price}, Available: ${available}`);
         </script>
     </body>
 </html>
