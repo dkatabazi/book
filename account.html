@@ -2,12 +2,24 @@
 <html>
 <head>
     <title>Penda - Account</title>
+    <style>
+        button {
+            color:rgb(107, 107, 110);
+            background-color:lightblue;
+        }
+    </style>
 </head>
 
 <body>
 
     <h1>Account Created!</h1>
     <p>Welcome to PendaDating 🎉</p>
-
+    <button id="continuebtn" type="submit">Continue</button>
+    <script>
+        const continuebtn=document.getElementById("continuebtn");
+        continuebtn.addEventListener('click', () => {
+            window.location.href = "dashboard.html";
+        });
+    </script>
 </body>
 </html>
