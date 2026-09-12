@@ -12,7 +12,8 @@
                 background-color:lightpink;
                 font-family: Arial, sans-serif;
                 border-radius:10px;
-                border:10px 5px 10px;
+                box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+
         }
         body {
             background-color:white;
@@ -44,22 +45,35 @@
             <input type="text" id ="username" placeholder="enter your name">
             <br>
             <label>email</label>
-            <input type="email" name="email" placeholder="enter your email">
+            <input type="email" id="email" placeholder="enter your email">
             <br>
             <label>password</label>
-            <input type="password" name="password" placeholder="enter your password">
+            <input id="password" type="password" placeholder="enter your password">
             <br>
             <button id="submitbtn" type="submit">Submit</button>
         </div>
         <script>
              const submitbutton = document.getElementById("submitbtn");
              const name = document.getElementById("username");
-             submitbutton.addEventListener('click', () => {
-                alert(`welcoame ${name.value}!`);
+             const email = document.getElementById("email");
+             const password = document.getElementById("password");
+             submitbutton.addEventListener('click', (e) => {
+                 e.preventDefault();
+                const nameValue = name.value;
+                const emailValue = email.value;
+                const passwordValue = password.value;
+                localStorage.setItem("userName", name.value);
+                localStorage.setItem("userEmail", email.value);
+                localStorage.setItem("userPassword", password.value);
+
                 submitbutton.textContent = "submittedgit";
                 submitbutton.style.backgroundColor = "green";
                 window.location.href = "account.html";
-             });
+             
+                alert(`Welcome ${nameValue}!`);
+
+             
+              });
         </script>
     </body>
 </html>
